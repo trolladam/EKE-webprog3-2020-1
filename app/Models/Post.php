@@ -6,5 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+    protected $fillable = [
+        'topic_id', 'title',
+        'description', 'content',
+    ];
+
+    public function topic()
+    {
+        return $this->belongsTo(Topic::class);
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
 }
