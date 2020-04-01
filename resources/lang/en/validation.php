@@ -146,6 +146,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'post.title' => 'title',
+        'post.topic_id' => 'topic',
+        'post.description' => 'description',
+        'post.content' => 'content',
+    ],
 
 ];
