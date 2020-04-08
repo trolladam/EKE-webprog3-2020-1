@@ -20,6 +20,11 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/publish', 'PostController@create')->name('post.create');
     Route::post('/publish', 'PostController@store');
+
+    Route::get('/update-post/{post}', 'PostController@edit')->name('post.edit');
+    Route::post('/update-post/{post}', 'PostController@update');
+
+    Route::post('/delte-post/{post}', 'PostContoller@destory')->name('post.delete');
 });
 
 Route::get('/post/{post}', 'PostController@show')->name('post.show');

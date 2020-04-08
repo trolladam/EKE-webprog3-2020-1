@@ -14,9 +14,10 @@ class PostController extends Controller
         //TODO: deafult function - list of post
     }
 
+    // http GET - /publish
     public function create()
     {
-        $topics = Topic::all();
+        $topics = Topic::orderBy('title', 'asc')->get();
 
         return view('posts.create')
             ->with([
@@ -24,6 +25,7 @@ class PostController extends Controller
             ]);
     }
 
+    // http POST - /publish
     public function store(PostRequest $request)
     {
         $post = Auth::user()
@@ -36,20 +38,28 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        dd($post);
-        //TODO: post details
+        return view('posts.show')
+            ->with(compact('post'));
     }
 
-    public function edit($id)
+    // http GET - /update-post/{post}
+    public function edit(Post $post)
     {
-        //TODO: show post edit form
+        $topics = Topic::orderBy('title', 'asc')->get();
+
+        return view('posts.edit')->with(compact('post', 'topics'));
     }
 
-    public function update($id)
+    // http POST - /update-post/{post}
+    public function update(Post $post, PostRequest $request)
     {
-        //TODO: update post
+        $post->update($request->post);
+
+        return redirect()
+            ->route('post.show', ['post' => $post]);
     }
 
+    // http POST - /delete-post/{post}
     public function destory($id)
     {
         //TODO: delete the post
