@@ -9,6 +9,10 @@ use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
+    public function __construct() {
+        $this->authorizeResource(Post::class, 'post');
+    }
+
     public function index()
     {
         //TODO: deafult function - list of post
@@ -60,8 +64,11 @@ class PostController extends Controller
     }
 
     // http POST - /delete-post/{post}
-    public function destory($id)
+    public function destory(Post $post)
     {
-        //TODO: delete the post
+        $post->delete();
+
+        return redirect()
+            ->route('home.index');
     }
 }
