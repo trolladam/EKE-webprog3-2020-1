@@ -1,6 +1,9 @@
-<article class="card">
+<article class="card mb-5">
     <div class="card-header">
-        {{ $post->title }}
+        <a href="{{ route('post.show', ['post' => $post]) }}">{{ $post->title }}</a>
+        @can('update', $post)
+            <a href="{{ route('post.edit', $post) }}">{{ __('edit') }}</a>
+        @endcan
     </div>
     <div class="card-body">
         <p>{{ $post->description }}</p>
