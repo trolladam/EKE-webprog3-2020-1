@@ -7,6 +7,8 @@ use App\Models\Topic;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 
+use Illuminate\Http\Request;
+
 class PostController extends Controller
 {
     public function __construct() {
@@ -70,5 +72,16 @@ class PostController extends Controller
 
         return redirect()
             ->route('home.index');
+    }
+
+    // http POST - /comment-post/{post}
+    public function comment(Post $post, Request $request)
+    {
+        $post->comments()->create([
+            'user_id' => Auth::user()->id,
+            'body' => $request->comment,
+        ]);
+
+        return back()->with('success', __('Comment saved successfully'));
     }
 }

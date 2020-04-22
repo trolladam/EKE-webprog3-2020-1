@@ -8,6 +8,7 @@
         <a href="{{ route('profile.show', $post->author) }}">
             {{ $post->author->fullname }}
         </a>
+        | Comments: {{ $post->comments->count() }}
     </div>
     <div class="card-body">
         <p>{{ $post->description }}</p>
