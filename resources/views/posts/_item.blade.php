@@ -4,6 +4,10 @@
         @can('update', $post)
             <a href="{{ route('post.edit', $post) }}">{{ __('edit') }}</a>
         @endcan
+        | Author:
+        <a href="{{ route('profile.show', $post->author) }}">
+            {{ $post->author->fullname }}
+        </a>
     </div>
     <div class="card-body">
         <p>{{ $post->description }}</p>

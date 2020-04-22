@@ -11,9 +11,16 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', "HomeController@index")->name('home.index');
 
 Route::get('/test', "TestController@index")->name('test.index');
+
+Route::get('/post/{post}', 'PostController@show')->name('post.show');
+
+Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
+
 
 Route::group(['middleware' => 'auth'], function() {
     //NOTE: routes in this function are protected by auth
@@ -26,7 +33,3 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::post('/delte-post/{post}', 'PostContoller@destory')->name('post.delete');
 });
-
-Route::get('/post/{post}', 'PostController@show')->name('post.show');
-
-Auth::routes();
