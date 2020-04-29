@@ -1,7 +1,7 @@
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{{ route('home.index') }}">Bloggr</a>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+        <a class="navbar-brand" href="{{ route('home.index') }}">Bloggr.</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,6 +33,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('profile.show', Auth::user()) }}">
+                            <img class="avatar"src="{{ Auth::user()->avatar }}" alt=" {{ Auth::user()->fullname }}">
                             {{ Auth::user()->fullname }}
                         </a>
                     </li>

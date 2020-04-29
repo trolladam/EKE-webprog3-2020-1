@@ -2,10 +2,5 @@
 
 @section('content')
     <h1>{{ $user->fullname }}</h1>
-    <div>
-        @foreach ($user->posts as $post)
-            @include('posts._item')
-        @endforeach
-    </div>
-
+    @include('posts._list', ['posts' => $user->posts])
 @endsection

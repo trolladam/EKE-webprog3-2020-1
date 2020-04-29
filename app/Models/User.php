@@ -47,4 +47,10 @@ class User extends Authenticatable
     {
         return "{$this->firstname} {$this->lastname}";
     }
+
+    public function getAvatarAttribute()
+    {
+        $gravatar_id = md5($this->email);
+        return "https://gravatar.com/avatar/{$gravatar_id}";
+    }
 }

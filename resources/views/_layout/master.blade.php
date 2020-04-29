@@ -8,12 +8,7 @@
     <meta name="generator" content="Jekyll v3.8.6">
     <title>Sticky Footer Navbar Template · Bootstrap</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sticky-footer-navbar/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @stack('styles')
   </head>
   <body class="d-flex flex-column h-100">
@@ -22,6 +17,8 @@
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
         <div class="container">
+            @include('_layout.alerts._success')
+            @include('_layout.alerts._error')
             @yield('content')
         </div>
     </main>

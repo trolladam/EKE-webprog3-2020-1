@@ -39,7 +39,8 @@ class PostController extends Controller
             ->create($request->post);
 
         return redirect()
-            ->route('post.show', ['post' => $post]);
+            ->route('post.show', ['post' => $post])
+            ->with('success', __('Post created successfully'));
     }
 
     public function show(Post $post)
@@ -62,7 +63,8 @@ class PostController extends Controller
         $post->update($request->post);
 
         return redirect()
-            ->route('post.show', ['post' => $post]);
+            ->route('post.show', ['post' => $post])
+            ->with('success', __('Post updated successfully'));
     }
 
     // http POST - /delete-post/{post}

@@ -1,0 +1,46 @@
+body {
+    padding-top: 80px;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+    }
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.card {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 35px;
+}
+
+header {
+    .navbar {
+        box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.4rem;
+            font-family: $font-family-serif;
+        }
+        .avatar {
+            height: 25px;
+        }
+        @include media-breakpoint-up(lg) {
+            .nav-item {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
