@@ -10983,3 +10983,44 @@ header .navbar .avatar {
   font-weight: bold;
 }
 
+.comment .comment-meta {
+  margin-bottom: 1rem;
+}
+
+.comment .comment-meta .avatar {
+  height: 40px;
+}
+
+.comment .comment-meta .info .user {
+  color: inherit;
+}
+
+.comment .comment-meta .info p {
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.comment .comment-meta .info p:nth-child(2) {
+  color: #7b7b7b;
+}
+
+.comment .replies form {
+  display: none;
+}
+
+.comment .reply-btn .text-cancel {
+  display: none;
+}
+
+.comment.replying .replies form {
+  display: block;
+}
+
+.comment.replying .reply-btn .text-cancel {
+  display: inline;
+}
+
+.comment.replying .reply-btn .text-reply {
+  display: none;
+}
+

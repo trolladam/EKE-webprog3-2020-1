@@ -17,6 +17,12 @@ class CommentController extends Controller
                 'body' => $request->comment,
             ]);
         }
+
+        if ($request->redirect_url) {
+            return redirect($request->redirect_url)
+                ->with(['success', __('Reply saved successfully')]);
+        }
+
         return back()->with(['success', __('Reply saved successfully')]);
     }
 }
