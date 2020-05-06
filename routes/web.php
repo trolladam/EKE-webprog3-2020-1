@@ -19,6 +19,8 @@ Route::get('/test', "TestController@index")->name('test.index');
 
 Route::get('/post/{post}', 'PostController@show')->name('post.show');
 
+Route::get('/topic/{topic}', 'TopicController@show')->name('topic.show');
+
 Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
 
 

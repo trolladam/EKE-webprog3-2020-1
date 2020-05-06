@@ -16,9 +16,9 @@
                         Topics
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Travel</a>
-                        <a class="dropdown-item" href="#">Food</a>
-                        <a class="dropdown-item" href="#">Gaming</a>
+                        @foreach($navTopics as $navTopic)
+                            <a class="dropdown-item" href="{{ route('topic.show', $navTopic) }}">{{ $navTopic->title }}</a>
+                        @endforeach
                     </div>
                 </li>
             </ul>

@@ -21,7 +21,9 @@
     </div>
     <div class="ml-auto">
         <p class="topic text-right">
-            {{ $post->topic->title }}
+            <a href="{{ route('topic.show', $post->topic) }}">
+                {{ $post->topic->title }}
+            </a>
         </p>
     </div>
 </div>
