@@ -3,5 +3,6 @@
         @foreach($posts as $post)
             @include('posts._item')
         @endforeach
+        {{ $posts->links('_layout.pagination.bs4') }}
     </div>
 </div>

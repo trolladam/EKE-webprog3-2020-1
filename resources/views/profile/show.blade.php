@@ -2,5 +2,5 @@
 
 @section('content')
     <h1>{{ $user->fullname }}</h1>
-    @include('posts._list', ['posts' => $user->posts])
+    @include('posts._list', ['posts' => $posts])
 @endsection

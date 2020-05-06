@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
 
         return view("home.index")
             ->with([
